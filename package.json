@@ -58,6 +58,7 @@
       "\\.(jpg|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
 
       "^@components(.*)$": "<rootDir>/src/js/components$1",
+      "^@libs(.*)$": "<rootDir>/src/js/libs$1",
       "^@assets(.*)$": "<rootDir>/src/assets$1"
     },
     "transform": {
