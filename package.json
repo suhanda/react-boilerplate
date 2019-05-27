@@ -4,6 +4,8 @@
   "description": "",
   "main": "./src/js/index.js",
   "scripts": {
+    "test": "jest",
+    "test-watch": "npm run test --watch --notify",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
@@ -12,16 +14,29 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.4.5",
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/preset-env": "7.4.5",
     "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.4.4",
+    "babel-jest": "24.8.0",
     "babel-loader": "8.0.6",
+    "enzyme": "3.9.0",
+    "enzyme-adapter-react-16": "1.13.2",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
+    "eslint-import-resolver-webpack": "0.11.1",
     "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jest": "22.6.4",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.8.0",
+    "jest-css-modules-transform": "2.2.0",
+    "jest-fetch-mock": "2.1.2",
+    "jsdom": "15.1.0",
     "webpack": "4.32.2",
     "webpack-cli": "3.3.2",
     "webpack-dev-server": "3.4.1"
@@ -32,5 +47,32 @@
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(jpg|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
+
+      "^@components(.*)$": "<rootDir>/src/js/components$1",
+      "^@assets(.*)$": "<rootDir>/src/assets$1"
+    },
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
+    "moduleFileExtensions": [
+      "css",
+      "scss",
+      "js",
+      "json",
+      "jsx"
+    ]
   }
 }
