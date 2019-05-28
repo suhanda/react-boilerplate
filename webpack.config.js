@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         bundle: './src/js/index.js',
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -28,9 +29,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader', // creates style nodes from JS strings
-                    'css-loader', // translates CSS into CommonJS
-                    'sass-loader', // compiles Sass to CSS, using Node Sass by default
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
                 ],
             },
             {
@@ -62,7 +63,7 @@ module.exports = {
         alias: {
             '@components': path.resolve(__dirname, 'src/js/components'),
             '@libs': path.resolve(__dirname, 'src/js/libs'),
-            '@sssets': path.resolve(__dirname, 'src/assets'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
         },
     },
 

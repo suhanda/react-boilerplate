@@ -3,6 +3,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import green from '@material-ui/core/colors/green';
 import 'roboto-fontface/css/roboto/sass/roboto-fontface.scss';
+import { CssBaseline } from '@material-ui/core';
 import App from './App';
 
 const theme = createMuiTheme({
@@ -11,10 +12,13 @@ const theme = createMuiTheme({
     },
 });
 
-const Container = () => (
-    <ThemeProvider theme={theme}>
-        <App />
-    </ThemeProvider>
+const AppContainer = () => (
+    <React.Fragment>
+        <CssBaseline />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
+    </React.Fragment>
 );
 
-export default Container;
+export default AppContainer;
