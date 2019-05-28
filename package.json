@@ -7,7 +7,8 @@
     "test": "jest",
     "test-watch": "jest --watch --notify",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start-dev": "webpack-dev-server --open --mode development",
+    "start" : "http-server ./dist",
   },
   "keywords": [],
   "author": "Dedi Suhanda <dedi.suhanda@gmail.com> (http://suhanda.com/)",
@@ -49,6 +50,7 @@
   "dependencies": {
     "@material-ui/core": "4.0.1",
     "@material-ui/styles": "4.0.1",
+    "http-server": "0.11.1",
     "lodash": "4.17.11",
     "numeral": "2.0.6",
     "prop-types": "15.7.2",
