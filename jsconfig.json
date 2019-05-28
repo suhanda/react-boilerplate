@@ -6,6 +6,7 @@
         "allowSyntheticDefaultImports": true,
         "paths": {
             "@components/*": ["./src/js/components/*"],
+            "@libs/*": ["./src/js/libs/*"],
             "@assets/*": ["./src/assets/*"],
         }
     },

@@ -6,7 +6,6 @@ import App from '@components/container/App';
 
 describe('<Container />', () => {
     const wrap = mount(<Container />);
-
     it('renders', () => {
         expect(wrap.find(Container).exists()).toBe(true);
     });
