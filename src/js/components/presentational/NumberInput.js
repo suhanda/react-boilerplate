@@ -17,6 +17,7 @@ const NumberInput = ({ onChange, helperText }) => {
             label="Input"
             placeholder="Please Input Money Format"
             helperText={helperText}
+            style={{ fontSize: '1.5em' }}
             error={!isEmpty(helperText)}
             fullWidth
             margin="normal"

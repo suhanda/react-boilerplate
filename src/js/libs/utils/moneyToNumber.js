@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 const leftTrimPattern = /^0*/g;
 
 const moneyToNumber = (currency, str, thousandSeperator = '.', decSeperator = ',') => {
-    const pattern = `^(${currency})?( )?(((((\\d{1,3}))(\\${thousandSeperator}\\d{3})*?)|(\\d*))(${decSeperator}\\d{2})?)$`;
+    const pattern = `^(${currency})?( )?(((((\\d{1,3}))(\\${thousandSeperator}\\d{3})*?)|(\\d*))(${decSeperator}\\d*)?)$`;
     const regex = new RegExp(pattern, 'gm');
     const matches = regex.exec(str);
     if (matches !== null && !isEmpty(matches[3])) {

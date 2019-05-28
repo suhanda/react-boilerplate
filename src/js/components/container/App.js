@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { isEmpty } from 'lodash';
 import {
-    Typography, AppBar, Toolbar, Container,
+    Typography, AppBar, Toolbar, Container, Card,
 } from '@material-ui/core';
 import NumberInput from '@components/presentational/NumberInput';
 import useDebounce from '@libs/hooks/useDebounce';
 import moneyToNumber from '@libs/utils/moneyToNumber';
+import CardOfShards from '@components/presentational/CardOfShards';
 
 export default () => {
     const [inputValue, setInputValue] = useState('');
@@ -29,13 +30,13 @@ export default () => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" color="textSecondary">
-                        Money Shards Calculator
+                        Minimum Number of Rupiahs
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Container maxWidth="md">
                 <NumberInput onChange={setInputValue} helperText={error} />
-                <Typography>{balance}</Typography>
+                {balance > 0 && <CardOfShards balance={balance} />}
             </Container>
         </>
     );

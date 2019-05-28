@@ -66,7 +66,9 @@ module.exports = {
             '@assets': path.resolve(__dirname, 'src/assets'),
         },
     },
-
+    devServer: {
+        hot: true,
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: './src/index.html',
