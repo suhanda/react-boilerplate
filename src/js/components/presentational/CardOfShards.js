@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import splitNumberToNominals from '@libs/utils/splitNumberToNominals';
-import { Card, Container, Typography } from '@material-ui/core';
+import { Card, Container } from '@material-ui/core';
 import Shards from './Shards';
 
 
